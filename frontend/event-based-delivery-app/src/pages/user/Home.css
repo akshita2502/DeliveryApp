@@ -1,0 +1,13 @@
+.events-section {
+  padding: 50px;
+}
+
+.events-section h2 {
+  margin-bottom: 25px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
