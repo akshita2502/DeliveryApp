@@ -1,0 +1,98 @@
+.app-header {
+  background-color: var(--surface-color);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Lighter shadow for the light theme */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Subtle border to separate header from content */
+  border-bottom: 1px solid var(--border-color); 
+}
+
+/* Logo Section Styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+}
+
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-container h1 {
+  font-size: var(--font-h2);
+  color: var(--accent-color);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.tagline {
+  font-size: 12px; /* Matches Small/Caption requirement */
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 35%;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent-color);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  margin-left: 0.5rem;
+  width: 100%;
+  font-size: var(--font-body-main);
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+/* Action Buttons */
+.header-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.icon-btn {
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--accent-color);
+}
