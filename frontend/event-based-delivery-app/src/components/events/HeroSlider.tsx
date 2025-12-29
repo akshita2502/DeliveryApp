@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaChevronDown } from 'react-icons/fa';
 import './HeroSlider.css';
 
 interface SlideData {
@@ -33,6 +33,11 @@ const HeroSlider: React.FC<HeroSliderProps> = ({ slides }) => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
+  const handleScrollDown = () => {
+    // Scrolls smoothly to the next section (approx 500px down or to the grid section)
+    window.scrollBy({ top: window.innerHeight - 100, behavior: 'smooth' });
+  };
+
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
@@ -62,7 +67,10 @@ const HeroSlider: React.FC<HeroSliderProps> = ({ slides }) => {
       <button className="slider-btn next-btn" onClick={nextSlide}>
         <FaChevronRight />
       </button>
-
+      {/* New Scroll Down Indicator */}
+      <div className="scroll-indicator" onClick={handleScrollDown}>
+        <FaChevronDown />
+      </div>
       {/* Dots */}
       <div className="slider-dots">
         {slides.map((_, index) => (
