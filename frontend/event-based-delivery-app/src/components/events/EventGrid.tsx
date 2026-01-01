@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import hook
 import type { Event } from '../../types';
 import './EventGrid.css';
 
@@ -8,12 +9,22 @@ interface EventGridProps {
 }
 
 const EventGrid: React.FC<EventGridProps> = ({ title, events }) => {
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handleCardClick = (id: number) => {
+    navigate(`/events/${id}`);
+  };
+
   return (
     <section className="events-grid-section">
       <h2 className="section-title">{title}</h2>
       <div className="events-grid">
         {events.map((event) => (
-          <div key={event.id} className="event-card">
+          <div 
+            key={event.id} 
+            className="event-card" 
+            onClick={() => handleCardClick(event.id)} // Add click handler
+          >
             <div className="card-image-wrapper">
               <img
                 src={event.event_cards_url}

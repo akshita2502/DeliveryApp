@@ -1,19 +1,24 @@
 .app-header {
   background-color: var(--surface-color);
-  padding: 0.75rem 2rem;
+  height: var(--header-height); /* Enforce fixed height */
+  box-sizing: border-box; /* Include padding in height calculation */
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Lighter shadow for the light theme */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
-  position: sticky;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+  
+  /* Position Fixes */
+  position: fixed;
   top: 0;
-  z-index: 100;
-  /* Subtle border to separate header from content */
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000; /* Highest layer */
   border-bottom: 1px solid var(--border-color); 
 }
 
-/* Logo Section Styling */
+/* Keep existing inner styles... */
 .logo-link {
   display: flex;
   align-items: center;
@@ -40,14 +45,13 @@
 }
 
 .tagline {
-  font-size: 12px; /* Matches Small/Caption requirement */
+  font-size: 12px;
   color: var(--text-secondary);
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-/* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
@@ -76,7 +80,6 @@
   outline: none;
 }
 
-/* Action Buttons */
 .header-actions {
   display: flex;
   gap: 1.5rem;

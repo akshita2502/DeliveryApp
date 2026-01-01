@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSearch, FaUser, FaShoppingCart, FaBirthdayCake } from 'react-icons/fa';
+import { FaSearch, FaUser, FaShoppingCart, FaBirthdayCake, FaBox } from 'react-icons/fa';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -7,7 +7,6 @@ const Header: React.FC = () => {
     <header className="app-header">
       <div className="header-logo">
         <a href="/" className="logo-link">
-          {/* Swapped FaGlassCheers for FaBirthdayCake */}
           <FaBirthdayCake className="logo-icon" />
           
           <div className="brand-container">
@@ -27,6 +26,13 @@ const Header: React.FC = () => {
           <FaUser />
           <span className="text-small">Login</span>
         </button>
+
+        {/* New Orders & Returns Button */}
+        <button className="icon-btn">
+          <FaBox />
+          <span className="text-small">Orders & Returns</span>
+        </button>
+
         <button className="icon-btn">
           <FaShoppingCart />
           <span className="text-small">Cart</span>
