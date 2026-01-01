@@ -1,0 +1,86 @@
+.sidenav-container {
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  bottom: 0;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--surface-color);
+  border-right: 1px solid var(--border-color);
+  transition: width 0.3s ease;
+  z-index: 900;
+  overflow-x: hidden;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.sidenav-open {
+  width: var(--sidenav-width-open);
+}
+
+.sidenav-closed {
+  width: var(--sidenav-width-collapsed);
+}
+
+.sidenav-toggle {
+  width: 100%;
+  padding: 0; /* Remove padding so flexbox handles alignment */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  height: 60px;
+}
+
+.sidenav-toggle:hover {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+}
+
+.sidenav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav-link {
+  display: flex;
+  align-items: center;
+  padding: 0; /* Align with toggle logic */
+  color: var(--text-primary);
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 50px;
+}
+
+.sidenav-link:hover {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+}
+
+/* Ensure the icon wrapper is always consistent */
+.link-icon {
+  min-width: var(--sidenav-width-collapsed); /* 60px */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.link-text {
+  /* No margin needed if min-width handles spacing */
+  opacity: 1;
+  transition: opacity 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidenav-closed .link-text {
+  opacity: 0;
+  pointer-events: none;
+}

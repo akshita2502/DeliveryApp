@@ -16,10 +16,24 @@ export interface ApiEvent {
   display_order: number;
 }
 
-// Type for the Hero Slider data derived from ApiEvent
 export interface SliderEvent {
   id: number;
   title: string;
   subtitle: string;
   image: string;
+}
+
+// Types for Product Page
+export interface Product {
+  id: number;
+  name: string;
+  actual_price: number;
+  discounted_price?: number;
+  image_url: string;
+  category: string;
+}
+
+export interface SortOption {
+  value: string;
+  label: string;
 }
