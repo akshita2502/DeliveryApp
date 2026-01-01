@@ -7,6 +7,11 @@
   --accent-color: #007BFF;   /* Brand Blue */
   --accent-hover: #0056b3;   /* Darker blue for hover states */
   --border-color: #DEE2E6;   /* Light grey for borders */
+
+  /* Layout Dimensions */
+  --header-height: 70px; /* Fixed height for header */
+  --sidenav-width-collapsed: 60px;
+  --sidenav-width-open: 250px;
   
   /* Typography Scale (Unchanged) */
   --font-h1: 32px;
