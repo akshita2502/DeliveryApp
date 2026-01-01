@@ -1,0 +1,131 @@
+.event-products-layout {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 0; /* Header is sticky */
+}
+
+.products-main-content {
+  flex-grow: 1;
+  margin-left: 60px; /* Match closed sidebar width */
+  transition: margin-left 0.3s ease;
+  background-color: var(--bg-color);
+  padding-bottom: 3rem;
+}
+
+/* Adjust margin when sidebar opens (optional, handled by overlay or push) */
+/* For this implementation, we push content */
+.sidebar-open .products-main-content {
+  margin-left: 250px;
+}
+
+/* Filter Bar Container */
+.products-header-bar {
+  background-color: var(--surface-color);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.products-info h1 {
+  font-size: var(--font-h2);
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.products-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* React Select Customization Override */
+.sort-select {
+  width: 200px;
+  font-size: var(--font-small);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+/* Products Grid */
+.products-grid-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.product-image-frame {
+  height: 200px;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.product-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.current-price {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.discount-tag {
+  color: #28a745; /* Success Green */
+  font-size: 0.8rem;
+  font-weight: 600;
+}

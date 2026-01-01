@@ -1,0 +1,126 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Event Detail / Hero Section */
+.event-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.event-hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.event-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1rem;
+  /* FORCE WHITE TEXT FOR CONTRAST ON DARK IMAGE */
+  color: #FFFFFF; 
+}
+
+.event-hero-content h1 {
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  /* OVERRIDE GLOBAL H1 COLOR */
+  color: #FFFFFF; 
+}
+
+.event-hero-content p {
+    /* OVERRIDE GLOBAL P COLOR */
+    color: #f8f9fa;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #FFFFFF; /* Ensure button text is white */
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: var(--font-body-main);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Event Cards Section */
+.events-grid-section {
+  padding: 4rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  /* Add subtle border for light theme card definition */
+  border: 1px solid var(--border-color); 
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Lighter shadow for light theme */
+}
+
+.card-image-wrapper {
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.event-card:hover .card-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}

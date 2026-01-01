@@ -1,0 +1,34 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Wrapper for SideNav and Main Content */
+.layout-body {
+  display: flex;
+  flex: 1;
+  margin-top: var(--header-height); /* Push content down by header height */
+  position: relative;
+}
+
+/* The scrollable content area */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--sidenav-width-collapsed); /* Default margin */
+  transition: margin-left 0.3s ease;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.content-wrapper.expanded {
+  margin-left: var(--sidenav-width-open);
+}
+
+/* Main page content should grow to fill space before footer */
+.page-content {
+  flex: 1;
+  background-color: var(--bg-color);
+}
