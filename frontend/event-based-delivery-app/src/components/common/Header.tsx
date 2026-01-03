@@ -1,19 +1,22 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and hook
 import { FaSearch, FaUser, FaShoppingCart, FaBirthdayCake, FaBox } from 'react-icons/fa';
 import './Header.css';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="app-header">
       <div className="header-logo">
-        <a href="/" className="logo-link">
+        <Link to="/" className="logo-link"> {/* Use Link for client-side routing */}
           <FaBirthdayCake className="logo-icon" />
           
           <div className="brand-container">
             <h1>EventKart</h1>
             <span className="tagline">Events Done Right.</span>
           </div>
-        </a>
+        </Link>
       </div>
       
       <div className="search-bar">
@@ -22,12 +25,12 @@ const Header: React.FC = () => {
       </div>
 
       <div className="header-actions">
-        <button className="icon-btn">
+        {/* Updated Login Button to Navigate */}
+        <button className="icon-btn" onClick={() => navigate('/login')}>
           <FaUser />
           <span className="text-small">Login</span>
         </button>
 
-        {/* New Orders & Returns Button */}
         <button className="icon-btn">
           <FaBox />
           <span className="text-small">Orders & Returns</span>
