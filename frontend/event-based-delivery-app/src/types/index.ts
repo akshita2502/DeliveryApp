@@ -27,13 +27,35 @@ export interface SliderEvent {
 export interface Product {
   id: number;
   name: string;
+  description?: string;
   actual_price: number;
   discounted_price?: number;
   image_url: string;
   category: string;
+  is_bundle: boolean;
+  is_active: boolean;
+  stock_count: number;
+  event_id: number;
 }
 
 export interface SortOption {
   value: string;
   label: string;
+}
+
+export interface FilterOptions {
+  categories: string[];
+  priceRange: [number, number];
+  showDiscountsOnly: boolean;
+}
+
+export interface ProductsState {
+  items: Product[];
+  bundledProducts: Product[];
+  filteredProducts: Product[];
+  categories: string[];
+  priceRange: [number, number];
+  maxPrice: number;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
 }
