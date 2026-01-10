@@ -111,3 +111,25 @@ VALUES
     10, 
     true
 );
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE IF NOT EXISTS products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    actual_price FLOAT NOT NULL,
+    discounted_price FLOAT,
+    image_url VARCHAR(255),
+    category VARCHAR(100) NOT NULL,
+    is_bundle BOOLEAN DEFAULT FALSE,
+    is_active BOOLEAN DEFAULT TRUE,
+    stock_count INTEGER DEFAULT 100,
+    event_id INTEGER NOT NULL REFERENCES events(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_products_event_id ON products(event_id);
+CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);
+
+-- Insertion Script for Products

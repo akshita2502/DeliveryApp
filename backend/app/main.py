@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 
 from app.core.database import engine, Base
-from app.api.v1.routes import event_route
+from app.api.v1.routes import event_route, product_route
 
 # Setup Logging
 logging.basicConfig(level=logging.INFO)
@@ -51,6 +51,7 @@ app.mount("/static", StaticFiles(directory=DATA_DIR), name="static")
 
 # Include Routers
 app.include_router(event_route.router, prefix="/api/v1/events", tags=["Events"])
+app.include_router(product_route.router, prefix="/api/v1/products", tags=["Products"])
 
 @app.get("/health")
 async def health_check():
